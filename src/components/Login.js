@@ -4,11 +4,13 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("user");
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
+    console.log("Role:", role);
   };
 
   return (
@@ -45,19 +47,15 @@ const Login = () => {
                 required
               />
             </div>
-            <button type="submit" className="login-button">
-              Login
-            </button>
-            <div className="login-links">
-              <a href="/forgot-password">Forgot Password?</a>
-              <span> | </span>
-              <a href="/signup">Sign Up</a>
+            <div className="form-group">
+              <label>Role</label>
+              <select value={role} onChange={(e) => setRole(e.target.value)} required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
             </div>
+            <button type="submit">Login</button>
           </form>
-          <footer className="login-footer">
-            <a href="/terms">Terms of Service</a> |{" "}
-            <a href="/privacy">Privacy Policy</a>
-          </footer>
         </div>
       </div>
     </div>
