@@ -5,9 +5,17 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    // Clear authentication token or user data
+    localStorage.removeItem("token"); // Assuming the token is stored in localStorage
+    sessionStorage.removeItem("token"); // If stored in sessionStorage
+    // Navigate back to login page
+    navigate("/");
+  };
+
   const handleExploreClick = () => {
     navigate("/policies");
-  }; 
+  };
 
   return (
     <div className="home-page">
@@ -23,10 +31,13 @@ const HomePage = () => {
             <li><a href="/renewal">Renewal</a></li>
             <li><a href="/claims">Claims</a></li>
             <li><a href="/support">Support</a></li>
-            <li><button className="secondary-button">Logout</button></li>
+            <li>
+              <button className="secondary-button" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
           </ul>
         </nav>
-        
       </header>
 
       {/* Hero Section */}
@@ -34,27 +45,14 @@ const HomePage = () => {
         <div className="hero-text">
           <h1>Secure Your Future Today</h1>
           <p>Find the perfect insurance policy that meets your needs.</p>
-          <button className="primary-button" onClick={handleExploreClick}>Explore Policies</button>
-        </div>
-        <img src="/assets/insurance-background.jpg" alt="Hero Banner" className="hero-image" />
-      </section>
-
-      {/* <section className="hero-section">
-        <div className="hero-text">
-          <h1>Secure Your Future Today</h1>
-          <p>Find the perfect insurance policy that meets your needs.</p>
           <button className="primary-button" onClick={handleExploreClick}>
             Explore Policies
           </button>
         </div>
-        <img
-          src="/assets/hero-insurance.jpg"
-          alt="Hero Banner"
-          className="hero-image"
-        />
-      </section> */}
+        <img src="/assets/insurance-background.jpg" alt="Hero Banner" className="hero-image" />
+      </section>
 
-      {/* Policy Categories */}
+      {/* Additional Sections */}
       <section className="policy-section">
         <h2>Our Insurance Policies</h2>
         <div className="policy-cards">
