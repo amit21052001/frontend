@@ -17,6 +17,10 @@ const HomePage = () => {
     navigate("/policies");
   };
 
+  const onClickSupport = () => {
+    navigate("/support");
+  };
+
   return (
     <div className="home-page">
       {/* Navbar */}
@@ -30,7 +34,7 @@ const HomePage = () => {
             <li><a href="/policies">Policies</a></li>
             <li><a href="/renewal">Renewal</a></li>
             <li><a href="/claims">Claims</a></li>
-            <li><a href="/support">Support</a></li>
+            <li><a href="/support" onClick={onClickSupport}>Support</a></li>
             <li>
               <button className="secondary-button" onClick={handleLogout}>
                 Logout

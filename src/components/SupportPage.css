@@ -1,132 +1,177 @@
-.support-page {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .support-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #0044cc;
-    color: white;
-  }
-  
-  .support-header .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .support-header .logo {
-    width: 40px;
-    margin-right: 10px;
-  }
-  
-  .nav-links {
-    list-style-type: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-left: 20px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .chat-section {
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .chat-window {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .chat-history {
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .chat-message {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .chat-message.user {
-    background-color: #e0f7fa;
-    text-align: right;
-  }
-  
-  .chat-message.bot {
-    background-color: #f1f1f1;
-  }
-  
-  .chat-input input {
-    width: 80%;
-    padding: 0.5rem;
-    margin-right: 10px;
-  }
-  
-  .chat-input button {
-    padding: 0.5rem;
-    background-color: #0044cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .contact-form-section {
-    padding: 2rem;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 0.3rem;
-  }
-  
-  .submit-button {
-    padding: 1rem;
-    background-color: #0044cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .faq-section {
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .faq-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .faq-item.active p {
-    display: block;
-  }
-  
-  /* .faq */
-  
+/* General page styling */
+.tickets-page {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-actions .btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-actions .btn:hover {
+  background-color: #218838;
+}
+
+.navbar-actions .status-filter {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Create Ticket Modal */
+.create-ticket-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Tickets List Styling */
+.tickets-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.ticket-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-5px);
+}
+
+.ticket-card h3 {
+  font-size: 1.6rem;
+  color: #444;
+}
+
+.ticket-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.ticket-card .status {
+  font-weight: bold;
+}
+
+.ticket-card .status.open {
+  color: #28a745;
+}
+
+.ticket-card .status.closed {
+  color: #dc3545;
+}
+
+.ticket-card .status.inprogress {
+  color: #ffc107;
+}
+
+.ticket-card .view-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-card .view-btn:hover {
+  background-color: #0056b3;
+}
