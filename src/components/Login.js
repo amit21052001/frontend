@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/auth/login", {
+      const response = await axios.post("http://localhost:8080/api/v1/auth/login", {
         email,
         password,
         role,
@@ -26,7 +26,8 @@ const Login = () => {
 
       if (response.data.token) {
         localStorage.setItem("authToken", response.data.token);
-        navigate("/home");
+        localStorage.setItem("role", role);
+        role === 'user' ? navigate("/home") : navigate('/admin');
       } else {
         setError("Login failed. Please try again.");
       }

@@ -1,38 +1,135 @@
 .admin-page {
-    padding: 2rem;
-    text-align: left;
-    background-image: url('/src/assets/insurance-background.jpg'); /* Add your background image path here */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
-  }
-  
-  .admin-page h1 {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1.5rem;
-  }
-  
-  .admin-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align buttons to the left */
-  }
-  
-  .admin-actions button {
-    width: 200px;
-    padding: 0.75rem;
-    margin: 0.5rem 0;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-actions button:hover {
-    background-color: #0056b3;
-  }
+  padding: 2rem;
+  text-align: left;
+  background-color: gray; /* Add your background image path here */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-page h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.admin-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align buttons to the left */
+  margin-bottom: 2rem;
+}
+
+.admin-actions button {
+  width: 200px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-actions button:hover {
+  background-color: #0056b3;
+}
+
+.claims-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-left: auto; /* Move table to the right */
+  color: black; /* Make text black */
+  font-weight: bold; /* Make text bold */
+}
+
+.claims-table th,
+.claims-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.claims-table th {
+  background-color: #007bff;
+  color: white;
+  text-align: left;
+}
+
+.claims-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.claims-table tr:hover {
+  background-color: #ddd;
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background: black; /* Change background color to black */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: white; /* Change text color to white for better contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  font-family: 'Arial', sans-serif; /* Use a modern font */
+}
+
+.form-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: black; /* Change text color to black for input fields */
+}
+
+.form-container button {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient background */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background: linear-gradient(90deg, #0056b3, #003f7f); /* Hover effect */
+}
