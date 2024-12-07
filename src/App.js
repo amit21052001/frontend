@@ -5,7 +5,8 @@ import ForgotPassword from "./components/ForgotPassword";
 import SignUp from "./components/SignUp";
 import AdminPage from "./components/AdminPage";
 import HomePage from "./components/HomePage";
-import SupportPage from "./components/SupportPage";
+import SupportPage from "./components/SupportPage"; 
+import ClaimPage from "./components/ClaimPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/admin"  element={<AdminPage />} />
         <Route path="/home" element={<HomePage />} /> 
         <Route path="/support" element={<SupportPage />} /> 
+        <Route path="/claim" element={<ClaimPage />} />
       </Routes>
     </Router>
   );
